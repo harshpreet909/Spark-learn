@@ -31,7 +31,7 @@ object FriendsByAge {
     val results = averagebyAge.collect()
 
     results.sorted.foreach(println)
-    println("----------------------------------------")
+    println("----------------------------------")
     println("Age that has max no. of frnds: " + results.maxBy(_._2)._1)
     println("Age that has min no. of frnds: " + results.minBy(_._2)._1)
 

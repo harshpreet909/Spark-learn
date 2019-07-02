@@ -14,16 +14,14 @@ object MinTemp {
   }
 
   def min(x:Float , y:Float):Float = {
-    if(x>y)
-      y
-    x
+    if (x > y) x else y
   }
 
   def main(args: Array[String]) {
 
     Logger.getLogger("org").setLevel(Level.ERROR)
 
-    val sc = new SparkContext("local[*]", "FriendsByAge")
+    val sc = new SparkContext("local[*]", "MinTemp")
 
 
     val lines = sc.textFile("src/main/resources/1800.csv")

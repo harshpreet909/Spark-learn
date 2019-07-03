@@ -1,4 +1,4 @@
-name := "untitled"
+name := "SparkLearn"
 
 version := "0.1"
 

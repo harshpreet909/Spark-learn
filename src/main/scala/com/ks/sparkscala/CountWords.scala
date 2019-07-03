@@ -22,10 +22,11 @@ object CountWords {
     // better way of doing the RDD way to keep it in cluster
     val countWordsRdd = words.map(x=> (x,1)).reduceByKey((x,y) => x+y)
 
+    val wordCountSorted = countWordsRdd.map(x=> (x._2 , x._1)).sortByKey()  // would still not be in sorted order as partition level sorting is done on RDD
 
     //countWords.foreach(println)
     println("---------------------")
-    countWordsRdd.foreach(println)
+    wordCountSorted.foreach(println)
   }
 
 }
